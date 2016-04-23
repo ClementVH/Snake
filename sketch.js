@@ -39,12 +39,6 @@ function draw() {
     
 }
 
-function mousePressed(){
-    
-    snake.addTail();
-    
-}
-
 
 function keyPressed(){
     

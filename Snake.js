@@ -33,6 +33,8 @@ function Snake(){
         if(this.pos.y * this.scale >= height) this.pos.y = 0;
         if(this.pos.y * this.scale < 0) this.pos.y = height/this.scale;
         
+        this.checkCollision();
+        
     }
     
     this.display = function(){
@@ -87,6 +89,27 @@ function Snake(){
         
         this.food = newFood.copy();
     
+    }
+    
+    this.checkCollision = function(){
+        
+        for(var i = 0; i < this.tail.length; i++){
+            
+            if(this.tail[i].x == this.pos.x && this.tail[i].y == this.pos.y){
+                
+                this.pos = createVector(5,5);
+                
+                this.tail = [];
+                this.tail.push(createVector(4,5));
+    
+                this.dir = createVector(1,0);
+    
+                this.food = createVector(10,5)
+                
+            }
+            
+        }
+        
     }
     
 }
