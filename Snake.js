@@ -7,7 +7,7 @@ function Snake(){
 
     this.dir = createVector(1,0);
 
-    this.food = createVector(10,5)
+    this.food = createVector(0,0)
 
     this.update = function(){
 
@@ -19,14 +19,16 @@ function Snake(){
 
         }
 
-        this.pos.add(this.dir);
-
         if(this.pos.x == this.food.x && this.pos.y == this.food.y){
 
             this.addTail();
             this.addFood();
 
         }
+
+        this.pos.add(this.dir);
+
+
 
         if(this.pos.x * this.scale >= width) this.pos.x = 0;
         if(this.pos.x * this.scale < 0) this.pos.x = width/this.scale - 1;
