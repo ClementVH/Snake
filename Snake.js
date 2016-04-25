@@ -19,6 +19,10 @@ function Snake(){
 
         }
 
+
+
+        this.pos.add(this.dir);
+
         if(this.pos.x == this.food.x && this.pos.y == this.food.y){
 
             this.addTail();
@@ -26,14 +30,19 @@ function Snake(){
 
         }
 
-        this.pos.add(this.dir);
-
-
-
         if(this.pos.x * this.scale >= width) this.pos.x = 0;
         if(this.pos.x * this.scale < 0) this.pos.x = width/this.scale - 1;
         if(this.pos.y * this.scale >= height) this.pos.y = 0;
         if(this.pos.y * this.scale < 0) this.pos.y = height/this.scale - 1;
+
+        if(this.pos.x == this.food.x && this.pos.y == this.food.y){
+
+            this.addTail();
+            this.addFood();
+
+        }
+
+
 
         this.checkCollision();
 
