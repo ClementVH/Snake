@@ -7,7 +7,7 @@ function Snake(){
 
     this.dir = createVector(1,0);
 
-    this.food = createVector(0,0)
+    this.food = createVector(10,5)
 
     this.update = function(){
 
